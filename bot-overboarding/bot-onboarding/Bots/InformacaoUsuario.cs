@@ -7,7 +7,7 @@
         public static string Funcao;
         public static string Mensagem;
         public static TipoPapel TipoPapel;
-        public static Acessos Acessos;
+        public static Acessos TipoAcesso;
     }
 
     public enum TipoPapel
