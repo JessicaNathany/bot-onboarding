@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1oD1hHi1+WxaRhGVzJtdR4ZwdwraU2WSp/upXmJ2Ld6ydprL0zXMC7T9r/30WOnFD+tdQEnIXqCjnceA/jnrSw==",
+  "dgSpecHash": "6oKoFa4lkSYwWVKlDjXNWfiinYu9sTeEOtHg1ZqgKBMNNa8YZRbWA6XvPqLPVo9UjG9lUh1fDuYRUWAGKWONNA==",
   "success": true,
-  "projectFilePath": "C:\\Github\\bot-globo\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
+  "projectFilePath": "C:\\Projetos\\bot-onboarding\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jnathany\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.1\\microsoft.aspnetcore.jsonpatch.3.1.1.nupkg.sha512",
     "C:\\Users\\jnathany\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.1\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.1.nupkg.sha512",

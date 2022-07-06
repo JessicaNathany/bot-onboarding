@@ -6892,11 +6892,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\bot-globo\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
+      "projectUniqueName": "C:\\Projetos\\bot-onboarding\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
       "projectName": "bot-onboarding",
-      "projectPath": "C:\\Github\\bot-globo\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
+      "projectPath": "C:\\Projetos\\bot-onboarding\\bot-overboarding\\bot-onboarding\\bot-onboarding.csproj",
       "packagesPath": "C:\\Users\\jnathany\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\bot-globo\\bot-overboarding\\bot-onboarding\\obj\\",
+      "outputPath": "C:\\Projetos\\bot-onboarding\\bot-overboarding\\bot-onboarding\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
