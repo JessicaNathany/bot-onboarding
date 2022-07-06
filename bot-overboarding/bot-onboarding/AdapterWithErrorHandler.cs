@@ -12,7 +12,6 @@ namespace bot_onboarding
         {
             OnTurnError = async (turnContext, exception) =>
             {
-                // Log any leaked exception from the application.
                 logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
 
                 // Send a message to the user
