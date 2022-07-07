@@ -15,7 +15,7 @@ namespace bot_onboarding.Bots
 
             var voltar = turnContext.Activity.Text;
 
-            if (voltar != null && voltar.ToUpper() == "V")
+            if (voltar != null && voltar.ToUpper() == "S")
             {
                 InfoUsuario.Time = null;
                 InfoUsuario.Funcao = null;
@@ -30,7 +30,7 @@ namespace bot_onboarding.Bots
                 await turnContext.SendActivityAsync(MessageFactory.Text(InfoUsuario.Mensagem, InfoUsuario.Mensagem), cancellationToken);
                 return;
             }
-            else if(InfoUsuario.Nome == null && inputUsuario.Length <= 1 && !inputUsuario.Equals("v", StringComparison.InvariantCultureIgnoreCase))
+            else if(InfoUsuario.Nome == null && inputUsuario.Length <= 1 && !inputUsuario.Equals("s", StringComparison.InvariantCultureIgnoreCase))
             {
                 InfoUsuario.Mensagem = $"Por gentileza, informe um nome válido.";
 
@@ -39,7 +39,8 @@ namespace bot_onboarding.Bots
             }
             else if(InfoUsuario.Nome == null)
             {
-                var welcomeText = "Olá seja bem-vindo! Qual seu nome?";
+                var welcomeText = "Olá seja bem-vindo! Eu sou o **Tonho da Lua**, te ajudarei a mergulhar na sua Jornada Corporativa. \r\n" +
+                                  "Qual seu nome? \r\n ";
                 await turnContext.SendActivityAsync(MessageFactory.Text(welcomeText, welcomeText), cancellationToken);
             }
 
@@ -57,8 +58,8 @@ namespace bot_onboarding.Bots
 
             if(InfoUsuario.TipoPapel == 0)
             {
-                var selecioneOpcoesDev = "**Essas são os acessos que você precisa. Digite uma opção que deseja ter acesso ou a letra V para voltar ao inicio:**" +
-                                          "\r\n 1- Jira ou Confluence \r\n 2- Gitlab \r\n 3- Banco de Dados \r\n 4- VPN \r\n 5- AWS \r\n 6- Grupo Teams \r\n 7- Como acessar o GSenha  \r\n 8- Requisitos mínimos para montar o ambiente \r\n 'V'- Voltar ao inicio";
+                var selecioneOpcoesDev = "**Essas são os acessos que você precisa. Digite uma opção que deseja ter acesso ou a letra S para sair:**" +
+                                          "\r\n 1- Jira ou Confluence \r\n 2- Gitlab \r\n 3- Banco de Dados \r\n 4- VPN \r\n 5- AWS \r\n 6- Grupo Teams \r\n 7- Como acessar o GSenha  \r\n 8- Requisitos mínimos para montar o ambiente \r\n 'S'- Sair";
 
                 InfoUsuario.TipoPapel = (TipoPapel)Enum.Parse(typeof(TipoPapel), turnContext.Activity.Text, true);
 
@@ -80,7 +81,7 @@ namespace bot_onboarding.Bots
                                          "2º No campo de busca, digite AWS e selecione o perfil e o time no qual você pertence, exemplo: \r\n" +
                                          "AWS | JCORP - PRODUCAO ESTUDIOS | DEV - 874081334926 - GMUSIC \r\n" +
                                          "3º Após selecionar o perfil, clique em next e depois em Submit \r\n" +
-                                         "Digite a letra **V** para voltar ao inicio";
+                                         "Digite a letra **S** para sair";
                 }
 
                 if (InfoUsuario.TipoAcesso == Acessos.Gitlab)
@@ -91,7 +92,7 @@ namespace bot_onboarding.Bots
                                          "2º No campo de busca, digite gitlab e selecione o perfil e o time no qual você pertence, exemplo: \r\n" +
                                          "Ex: GITLAB | TECNOLOGIA - HDG - JCORP - PRODUCAO DE CONTEUDO \r\n" +
                                          "3º Após selecionar o perfil, clique em next e depois em Submit \r\n" +
-                                         "Digite a letra **V** para voltar ao inicio";
+                                         "Digite a letra **S** para sair";
                 }
 
                 if (InfoUsuario.TipoAcesso == Acessos.GSenha) 
@@ -102,7 +103,7 @@ namespace bot_onboarding.Bots
                                             "2º Certifique-se que tenha acesso ao Gsenha, caso contrário, solicite a SM ou coordenador \r\n" +
                                             "3º Clique no link: https://gsenha.globoi.com/login?next=/passwords \r\n" +
                                             "4º Clique no botão Login Backstage e depois clicar Entrar com Backstage \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }
 
 
@@ -112,21 +113,21 @@ namespace bot_onboarding.Bots
                     selecioneOpcoesAcesso = "**Para solicitar o acesso ao Banco de Dados, siga caminho abaixo:** \r\n" +
                                             "Se você tiver acesso ao Confluence, então clique no link e siga o passo a passo de instalação e configuração https://globo.atlassian.net/wiki/spaces/ENCROS/pages/403526877408/Globo+CLI+Instala+o \r\n" +
                                             "Se não, contacte seu SM ou coordenador do seu time. \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }                                    
 
                 if (InfoUsuario.TipoAcesso == Acessos.JiraCoFluence)
                 {
                     selecioneOpcoesAcesso = "**Para conseguir o acesso ao Jira ou Confluence** \r\n" +
                                             "procure a SM ou coordenador do seu time! \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }
 
                 if (InfoUsuario.TipoAcesso == Acessos.GruposTeams)
                 {
                     selecioneOpcoesAcesso = "**Para conseguir o acesso aos grupos do Teams** \r\n" +
                                             "procure a SM ou coordenador do seu time! \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }
 
                 if (InfoUsuario.TipoAcesso == Acessos.VPN)
@@ -135,7 +136,7 @@ namespace bot_onboarding.Bots
                                             "Se você tiver acesso ao Confluence, então clique no link https://globo.atlassian.net/wiki/spaces/JCEDC/pages/403448136247/JCEC+Guia+para+inclus+o+de+novos+colaboradores \r\n" +
                                             "Se não, contacte seu SM ou coordenador do seu time. \r\n" +
                                             "Vá direto na opção (Solicitação de acesso a VPN) \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }
 
                 if (InfoUsuario.TipoAcesso == Acessos.RequisitosMinimosAmbiente)
@@ -146,7 +147,7 @@ namespace bot_onboarding.Bots
                                             "3º Git \r\n" +
                                             "4º Configurar o tunnel SSH com os endpoints dos ambientes \r\n" +
                                             "5º Postman ou Insomnia \r\n" +
-                                            "Digite a letra **V** para voltar ao inicio";
+                                            "Digite a letra **S** para sair";
                 }
 
                 await turnContext.SendActivityAsync(MessageFactory.Text(selecioneOpcoesAcesso, selecioneOpcoesAcesso), cancellationToken);
@@ -156,7 +157,8 @@ namespace bot_onboarding.Bots
 
         protected override async Task OnMembersAddedAsync(IList<ChannelAccount> membersAdded, ITurnContext<IConversationUpdateActivity> turnContext, CancellationToken cancellationToken)
         {
-            var welcomeText = "Olá seja bem-vindo! Qual seu nome?";
+            var welcomeText = "Olá seja bem-vindo! Eu sou o **Tonho da Lua**, te ajudarei a mergulhar na sua Jornada Corporativa. \r\n" +
+                               "Qual seu nome? \r\n ";
 
             foreach (var member in membersAdded)
             {
